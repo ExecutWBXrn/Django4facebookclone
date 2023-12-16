@@ -5,5 +5,6 @@ from.converter import *
 register_converter(lim4symbConverter, "lim4symb")
 
 urlpatterns = [
-    path('', index),
+    path('', index, name="home"),
+    path('about/', about, name="about"),
 ]
