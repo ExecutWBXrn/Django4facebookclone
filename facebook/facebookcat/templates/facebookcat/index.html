@@ -5,7 +5,11 @@
     <title>{{ title }}</title>
 </head>
 <body>
-<p>{{ menu|join:" | " }}</p>
+<p>
+    {% for i in menu %}
+    <a href="{% url i.url %}">{{ i.title }} {% if not forloop.last %} | {% endif %}</a>
+    {% endfor %}
+</p>
 <p><h3>Facebook head page</h3></p>
 <ul>
     {% for i in DB_data %}

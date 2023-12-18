@@ -9,16 +9,33 @@ db_data = [
 def index(request):
     context = {
         "title" : "facebook.com",
-        "menu" : ["about site", "publish photo", "about us", "log in"],
+        "menu" : [
+            {"title":"about site","url":"about"},
+            {"title":"publish photo","url":"photo"},
+            {"title":"about us","url":"finfo"},
+            {"title":"log in","url":"log"},
+        ],
         "DB_data" : db_data,
     }
     return render(request, "facebookcat/index.html", context=context)
 
 def about(request):
     context = {
-        "title": "facebook.com",
+        "title" : "facebook.com",
     }
     return render(request, "facebookcat/about.html", context=context)
+
+def photo(request):
+    return HttpResponse("Here shall be photo")
+
+def finfo(request):
+    context={
+        "title":"further information",
+    }
+    return render(request, "facebookcat/finfo.html", context=context)
+
+def log(request):
+    return HttpResponse("this page coming soon")
 
 def nfound(request, exception):
     return HttpResponseNotFound("Not facebook")
