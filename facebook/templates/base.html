@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+{% block hyper_links %} {% endblock %}
+<p><h3>Facebook head page</h3></p>
+<ul>
+    {% for i in DB_data %}
+    {% if i.is_published %}
+        <h3>{{ i.photo }}</h3>
+        <h4>{{ i.descripthion }}</h4>
+        <p>{{ i.comments }}</p>
+        {% if not forloop.last %}
+            <hr>
+        {% endif %}
+    {% endif %}
+    {% endfor %}
+</ul>
+</body>
+</html>

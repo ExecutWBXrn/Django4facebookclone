@@ -22,6 +22,12 @@ def index(request):
 def about(request):
     context = {
         "title" : "facebook.com",
+        "menu": [
+            {"title": "about site", "url": "about"},
+            {"title": "publish photo", "url": "photo"},
+            {"title": "about us", "url": "finfo"},
+            {"title": "log in", "url": "log"},
+        ],
     }
     return render(request, "facebookcat/about.html", context=context)
 
@@ -31,6 +37,12 @@ def photo(request):
 def finfo(request):
     context={
         "title":"further information",
+        "menu": [
+            {"title": "about site", "url": "about"},
+            {"title": "publish photo", "url": "photo"},
+            {"title": "about us", "url": "finfo"},
+            {"title": "log in", "url": "log"},
+        ],
     }
     return render(request, "facebookcat/finfo.html", context=context)
 

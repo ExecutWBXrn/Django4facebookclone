@@ -1,0 +1,5 @@
+<p>
+    {% for i in menu %}
+    <a href="{% url i.url %}">{{ i.title }} {% if not forloop.last %} | {% endif %}</a>
+    {% endfor %}
+</p>
