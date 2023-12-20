@@ -1,0 +1,22 @@
+{% load static %}
+{% load cat_tag %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'facebookcat/css/style.css' %}">
+    <link type="imagen/x-icon" rel="shortcut icon" href="{% static 'facebookcat/img/2021_Facebook_icon.svg' %}">
+</head>
+<body>
+{% include 'facebookcat/includes/hyperlink.html' %}
+{% cat as cat %}
+{% for i in cat %}
+<p>
+    <li>
+        {{ i.title }}
+    </li>
+</p>
+{% endfor %}
+</body>
+</html>

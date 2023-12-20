@@ -10,4 +10,5 @@ urlpatterns = [
     path('pubphoto/', photo, name="photo"),
     path('info/', finfo, name="finfo"),
     path('log/', log, name="log"),
+    path('categories/', categories, name="cat"),
 ]
